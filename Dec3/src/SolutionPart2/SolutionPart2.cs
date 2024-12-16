@@ -20,3 +20,4 @@ public class SolutionPart2 (string filePath)
         Console.WriteLine($"Dec3 Part 2 Result: {sumOfProducts}");
     }
 }
+//Commit me
