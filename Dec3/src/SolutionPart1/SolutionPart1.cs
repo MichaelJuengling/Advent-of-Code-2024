@@ -1,14 +1,17 @@
+using System.Text.RegularExpressions;
+
 namespace Dec3.SolutionPart1;
 
 public class SolutionPart1 (string filePath)
 {
     public void CalculateSolution()
     {
-        int Result = 0; // TODO Rename Output Variable
+        int sumOfProducts = 0;
+        var input = File.ReadAllText(filePath);
         
+        var allMatches = Regex.Matches(input, @"mul\((\d{1,3}),(\d{1,3})\)");
+        foreach (Match match in allMatches) sumOfProducts += int.Parse(match.Groups[1].Value) * int.Parse(match.Groups[2].Value);
         
-        
-        
-        Console.WriteLine($"Dec3 Part 1 Result: {Result}");
+        Console.WriteLine($"Dec3 Part 1 Result: {sumOfProducts}");
     }
 }

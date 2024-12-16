@@ -9,6 +9,5 @@ class Program
         solutionPart1.CalculateSolution();
         var solutionPart2 = new SolutionPart2("data/Input.txt");
         solutionPart2.CalculateSolution();
-        //Hi
     }
 }
