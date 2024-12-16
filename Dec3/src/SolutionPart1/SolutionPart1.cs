@@ -6,11 +6,14 @@ public class SolutionPart1 (string filePath)
 {
     public void CalculateSolution()
     {
-        int sumOfProducts = 0;
         var input = File.ReadAllText(filePath);
-        
         var allMatches = Regex.Matches(input, @"mul\((\d{1,3}),(\d{1,3})\)");
-        foreach (Match match in allMatches) sumOfProducts += int.Parse(match.Groups[1].Value) * int.Parse(match.Groups[2].Value);
+        
+        int sumOfProducts = 0;
+        foreach (Match match in allMatches)
+        {
+            sumOfProducts += int.Parse(match.Groups[1].Value) * int.Parse(match.Groups[2].Value);
+        }
         
         Console.WriteLine($"Dec3 Part 1 Result: {sumOfProducts}");
     }
